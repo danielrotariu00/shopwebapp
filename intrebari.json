@@ -1,0 +1,33 @@
+[
+  {
+    "intrebare": "Care este temperatura ideală a frigiderului?",
+    "variante": ["5°C", "4°C", "3°C", "2°C"],
+    "corect": 1
+  },
+  {
+    "intrebare":"Care este temperatura ideală a congelatorului?",
+    "variante": ["-10°C", "-18°C", "-12°C", "-16°C"],
+    "corect": 1
+  },
+  {
+    "intrebare": "Cuptorul cu microunde e periculos pentru sănătate?",
+    "variante": ["Da", "Nu"],
+    "corect": 1
+  },
+  {
+    "intrebare": "Care este puterea maximă a unui aspirator?",
+    "variante": ["800 watts", "700 watts", "600 watts", "900 watts"],
+    "corect": 3
+  },
+  {
+    "intrebare": "Care este numărul maxim de rpm pentru o mașină de spălat?",
+    "variante": ["1400", "1600", "1800", "2000"],
+    "corect": 2
+  },
+  {
+    "intrebare": "Care este pretul televizorului The Wall de la Samsung?",
+    "variante": ["$180,000", "$250,000", "$100,000", "$150,000", "$200,000"],
+    "corect": 2
+  }
+
+]

@@ -1,0 +1,30 @@
+<div class="main_wrapper">
+    <% if(utilizator !== null){ %>
+        <h1 class="custom_header">Logat ca '<%- utilizator -%>'. <a href="/delogare">Delogare.</a></h1>
+    <% } %>
+    <form id="formular" action="/rezultat-chestionar" method="POST">
+        <%
+        var answerIndex = 0;
+        var questionIndex = 0;
+        intrebari.forEach(intrebare=>{ %>
+            <h2 class="custom_header"><%- questionIndex + 1 -%>. <%- intrebare['intrebare'] -%></h2>
+            <div class="answer_wrapper">
+                <%
+                intrebare['variante'].forEach(varianta => { %>
+                    <input type="radio" id="q<%- questionIndex -%>a<%- answerIndex -%>" name="<%- questionIndex -%>" value="<%- answerIndex -%>" required>
+                    <label for="q<%- questionIndex -%>a<%- answerIndex -%>"><%- varianta -%></label><br>
+                <%
+                    answerIndex += 1;
+                });
+                %>
+            </div>
+        <%
+            answerIndex = 0;
+            questionIndex += 1;
+        });
+        %>
+        <br>
+        <input type="submit" class="custom_button" value="Trimite">
+    </form>
+</div>
+

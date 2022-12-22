@@ -1,0 +1,13 @@
+<div class="main_wrapper">
+    <h1 class="custom_header">Logat ca <%- utilizator -%>. <a href="/delogare">Delogare.</a></h1>
+    <%if(selected_products.length !== 0){%>
+    <h1 class="custom_header">Produsele adăugate în coș:</h1>
+    <table class="custom_table">
+        <%selected_products.forEach(product=>{%>
+        <tr><td><%-product-%></td></tr>
+        <%})%>
+    </table>
+    <%}else{%>
+    <h1 class="custom_header">Coșul este gol</h1>
+    <%}%>
+</div>

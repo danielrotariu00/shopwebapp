@@ -1,0 +1,7 @@
+<div class="main_wrapper">
+    <% if(utilizator !== null){ %>
+        <h1 class="custom_header">Logat ca '<%- utilizator -%>'. <a href="/delogare">Delogare.</a></h1>
+    <% } %>
+    <h3 class="custom_header"> Rezultat chestionar: <%-(corecte/nr_intrebari).toFixed(2)*100-%>%.</h3>
+    <h3 class="custom_header"> Ați răspuns corect la <%-corecte-%> întrebări din <%-nr_intrebari-%> 
+</div>

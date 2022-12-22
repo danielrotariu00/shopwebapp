@@ -1,0 +1,27 @@
+<%function onError(){
+    var continutMesajEroare;
+    if(mesajEroare !== "") {
+        continutMesajEroare = `<h1 style="color:red">${mesajEroare}</h1>`;
+    }
+    else{
+        continutMesajEroare ="";
+    }
+    return continutMesajEroare;
+}%>
+
+<div class="wrapper">
+    <div class="title">Bine ai venit!</div>
+    <form action="/verificare-autentificare"  method="POST">
+            <label>Utilizator</label>
+            <br/>
+            <input type="text" name="utilizator" id="utilizator" required>
+            <label>Parola</label>
+            <br/>
+            <input type="password" name="parola" id="parola" required>
+            <br/><br/>
+            <input type="submit" value="Autentificare">
+    </form>
+    <h4 class="error-message">
+        <%- onError(); -%>
+    </h4>
+</div>

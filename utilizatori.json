@@ -1,0 +1,27 @@
+[
+  {
+    "username": "admin",
+    "password": "admin",
+    "type": "admin",
+    "first_Name": "Daniel",
+    "last_Name": "Rotariu",
+    "telefon": "1234567"
+  },
+  {
+    "username": "test",
+    "password": "test",
+    "type": "user",
+    "first_Name": "Test",
+    "last_Name": "Test",
+    "telefon": "1234567"
+  },
+  {
+    "username": "user",
+    "password": "user",
+    "type": "user",
+    "first_Name": "User",
+    "last_Name": "User",
+    "telefon": "1234567"
+  }
+  
+]

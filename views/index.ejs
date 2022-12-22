@@ -1,0 +1,48 @@
+<div class="main_wrapper">
+<% if(rezultatLogin === 'mesajEroare' || rezultatLogin === undefined){ %>
+    <h1 class="custom_header">Pentru autentificare accesați <a href="/autentificare">acest link</a></h1>
+<% } %>
+    <% if(utilizator !== null){ %>
+        <h1 class="custom_header">Logat ca <%- utilizator -%>. <a href="/delogare">Delogare.</a></h1>
+    <% } %>
+    <% if (rezultatLogin != 'mesajEroare' && rezultatLogin != undefined){ %>
+        <h1 class="custom_header">Bine ai venit, <%- rezultatLogin -%></h1>
+        <h2 class="custom_header"><a href="/chestionar" class="custom_link">Chestionar</a></h2>
+        <h2 class="custom_header"><a href="/vizualizare-cos" class="custom_link">Coș cumpărături</a></h2>
+        <br>
+        <form id="creare_bd" method="GET" action="/creare-bd">
+            <input type="submit" value="Creare BD" class="custom_button">
+        </form>
+        <br>
+        <form id="inserare_bd" method="GET" action="/inserare-bd">
+            <input type="submit" value="Inserare BD" class="custom_button">
+        </form>
+    <% } %>
+    <% if (tipUtilizator == 'admin'){ %>
+        <h2 class="custom_header"><a href="/admin" class="custom_link">Admin</a></h2>
+    <% } %>
+    <h1 class="custom_header">Produse disponibile</h1>
+    <table class="custom_table">
+        <thead>
+        <tr>
+            <th>Nume</th>
+            <th>Pret</th>
+        </tr>
+        </thead>
+        <%
+        produse.forEach(produs=>{ %>
+            <tr>
+                <td><%- produs.nume -%></td>
+                <td><%- produs.pret -%></td>
+                <% if (rezultatLogin != 'mesajEroare' && rezultatLogin != undefined){ %>
+                <td>
+                    <form id="form_produs_<%- produs.id -%>" method="POST" action="/adaugare_cos">
+                        <input type="hidden" name="id" value="<%- produs.id -%>">
+                        <input type="submit" value="Adaugă în coș">
+                    </form>
+                </td>
+                <% } %>
+            </tr>
+        <% }); %>
+    </table>
+</div>
